@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mogging Meter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mogging Meter</h1>
+        <div class="upload-container">
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <p>Drag & Drop an image or</p>
+                    <button id="browse-btn" class="browse-btn">Browse Files</button>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                </div>
+            </div>
+            <div id="preview-container" class="preview-container hidden">
+                <img id="preview-image" src="" alt="Preview">
+                <div id="result-overlay" class="result-overlay">
+                    <div class="percentage"></div>
+                </div>
+                <button id="reset-btn" class="reset-btn">Try Another Image</button>
+            </div>
+        </div>
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analyzing image...</p>
+        </div>
+        <div id="error-message" class="error-message hidden"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
